@@ -30,29 +30,47 @@ p {
   transition: 0.3s;
 }
 
-/* Example filters — change these for each image */
+/* 1. Abstract Shapes — gradient border */
 .card:nth-child(1) img {
-  filter: grayscale(100%);
+  border: 10px solid transparent;
+  border-image: linear-gradient(45deg, #ff6ec4, #7873f5) 1;
+  filter: contrast(120%);
 }
 
+/* 2. City Skyline — sepia & brightness filter */
 .card:nth-child(2) img {
-  filter: sepia(60%) brightness(1.1);
+  filter: sepia(60%) brightness(1.3);
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
 }
 
+/* 3. Color Gradient — circular border-radius example */
 .card:nth-child(3) img {
-  border: 10px solid #ff66cc;
   border-radius: 50%;
+  border: 6px solid #ff66cc;
+  filter: saturate(150%);
 }
 
-.card:nth-child(4) img {
-  filter: contrast(120%) saturate(150%);
-  border: 6px dashed green;
+/* 4. Football Field — layered with Tic Tac Toe board */
+.card:nth-child(4) {
+  width: 300px;
+  height: 200px;
+  background-image: url('images/tic tac toe board.png'), url('images/football field top view.jpg');
+  background-size: contain, cover;
+  background-repeat: no-repeat, no-repeat;
+  background-position: center, center;
+  border: 6px solid green;
+  border-radius: 10px;
 }
 
+/* 5. Mountain Sunset — hue rotation & blur */
 .card:nth-child(5) img {
   filter: hue-rotate(45deg) blur(1px);
+  box-shadow: 0 0 25px #444;
 }
 
+/* 6. Tic Tac Toe — drop shadow */
 .card:nth-child(6) img {
-  filter: drop-shadow(5px 5px 10px gray);
+  filter: drop-shadow(10px 10px 15px gray);
+  border-radius: 25px;
 }
